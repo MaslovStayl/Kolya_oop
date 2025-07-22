@@ -17,4 +17,7 @@ public class Solution {
     }
 
     //Напишите тут ваши методы
+    public static void print(int a, Integer b, Boolean c,Character d, Double e, String f){
+
+    }
 }

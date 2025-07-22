@@ -15,14 +15,11 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-рпгоп
+        print(0, 0);
     }
 
     //Напишите тут ваши методы
-    public static void print(int x){
-
-    }
-    public static void print(Integer y){
+    public static void print (int x, Integer y){
 
     }
 }

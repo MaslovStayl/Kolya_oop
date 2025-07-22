@@ -22,4 +22,25 @@ public class Solution {
     }
 
     //Напишите тут ваши методы
+    public static int min(int x = 3, int y = 7){
+        if( x < y){
+           return x;
+    }else {
+            return y;
+        }
+        }
+    public static long min(long x = 5, long y = 2){
+        if( x < y){
+            return x;
+        }else {
+            return y;
+        }
+    }
+    public static double min(double x = 1.8, double y = 9.2){
+        if( x < y){
+            return x;
+        }else {
+            return y;
+        }
+    }
 }
