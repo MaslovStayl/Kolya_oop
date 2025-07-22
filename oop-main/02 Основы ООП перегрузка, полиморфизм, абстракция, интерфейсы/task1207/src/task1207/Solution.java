@@ -20,7 +20,7 @@ public class Solution {
 
     //Напишите тут ваши методы
     public static void print(int x){
-
+ffhjkkjg
     }
     public static void print(Integer y){
 
