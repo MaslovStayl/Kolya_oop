@@ -15,7 +15,7 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-
+рпгоп
     }
 
     //Напишите тут ваши методы
