@@ -32,13 +32,29 @@ public class Solution {
 
     public static String getObjectType(Object o) {
         //напишите тут ваш код
+        if (o instanceof Cat ){
+            System.out.println(" Кот ");
+        }
+        if (o instanceof Tiger ){
+            System.out.println(" Тигр ");
+        }
+        if (o instanceof Lion ){
+            System.out.println(" Лев ");
+        }
+        if (o instanceof Bull ){
+            System.out.println(" Бык ");
+        }
+        if (o instanceof Animal ){
+            System.out.println(" Животное ");
+        }
 
         return "Животное";
     }
 
-    public static class Cat extends Animal   //<--Классы наследуются!!
-    {
+    public static class Cat extends Animal {  //<--Классы наследуются!!
+
     }
+
 
     public static class Tiger extends Cat {
     }

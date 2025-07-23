@@ -27,7 +27,21 @@ public class Solution {
 
     public static String getObjectType(Object o) {
         //напишите тут ваш код
-
+        if (o instanceof Cat ){
+            System.out.println(" Кот ");
+        }
+        if (o instanceof Tiger ){
+            System.out.println(" Тигр ");
+        }
+        if (o instanceof Lion ){
+            System.out.println(" Лев ");
+        }
+        if (o instanceof Bull ){
+            System.out.println(" Бык ");
+        }
+        if (o instanceof Pig ){
+            System.out.println(" Свинья ");
+        }
         return "Животное";
     }
 

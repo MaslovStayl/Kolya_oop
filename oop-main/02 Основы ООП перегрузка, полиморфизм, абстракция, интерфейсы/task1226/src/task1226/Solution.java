@@ -21,18 +21,35 @@ Requirements:
 public class Solution {
 
     public static void main(String[] args) {
-
+    }
+    public interface CanFly{
+        void fly();
+    }
+    public interface CanClimb{
+        void climb();
+    }
+    public interface CanRun{
+        void run();
+    }
+    public class Cat implements CanRun, CanClimb {
+        @Override
+        public void run() {
+            return;
+        }
+        @Override
+        public void climb() {return;}
     }
 
-    public class Cat {
-    }
-
-    public class Dog {
+    public class Dog implements CanRun {
+        @Override
+        public void run() {return;}
     }
 
     public class Tiger extends Cat {
     }
 
-    public class Duck {
+    public class Duck implements CanFly {
+        @Override
+        public void fly() {return;}
     }
 }
