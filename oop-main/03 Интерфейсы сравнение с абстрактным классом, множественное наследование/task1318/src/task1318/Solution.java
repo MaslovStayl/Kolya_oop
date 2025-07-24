@@ -1,8 +1,6 @@
 package task1318;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Scanner;
 
 /* 
@@ -19,7 +17,26 @@ Requirements:
 4. BufferedReader также должен быть закрыт.*/
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String file = reader.readLine();
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("c:/java/test.txt");
+            fileOutputStream.write(file.getBytes());
+            fileOutputStream.close();
+
+            InputStream inputStream = new FileInputStream("c:/java/test.txt");
+
+
+            while (inputStream.available() > 0) {
+                int data = inputStream.read();
+                System.out.print((char) (data));
+            }
+            inputStream.close();
+        } catch (FileNotFoundException e) {
+                System.out.println(e);
+        }
+        reader.close();
     }
 }
