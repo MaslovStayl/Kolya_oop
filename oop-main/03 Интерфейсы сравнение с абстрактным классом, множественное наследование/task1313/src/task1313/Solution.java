@@ -1,8 +1,6 @@
 package task1313;
 
-import java.awt.*;
-
-/* 
+/*
 Лисица — это такое животное
 Реализуй в классе Fox интерфейс Animal.
 Поменяй код так, чтобы в классе Fox был только один метод - getName.
@@ -15,17 +13,17 @@ Requirements:
 3. В интерфейсе Animal должен быть объявлен не default метод getColor.
 4. Дополнительные классы или интерфейсы создавать нельзя.*/
 
+import java.awt.*;
+
 public class Solution {
     public static void main(String[] args) throws Exception {
     }
 
     public interface Animal {
-        Color getColor();
+        default Color getColor() {return  null;}
     }
 
-    public static class Fox {
-        public String getName() {
-            return "Fox";
-        }
+    public class Fox implements Animal {
+        public String getName() {return "Fox";}
     }
 }

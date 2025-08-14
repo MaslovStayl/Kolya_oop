@@ -23,7 +23,11 @@ public class Solution {
         void refresh();
     }
 
-    class Screen {
+    static abstract class Screen implements Updatable {
+        @Override
+        public abstract void refresh();
+        @Override
+        public abstract void onSelect();
+        }
 
     }
-}

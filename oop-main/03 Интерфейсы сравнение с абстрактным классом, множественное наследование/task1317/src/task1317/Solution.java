@@ -20,8 +20,12 @@ public class Solution {
         System.out.println(new Today(WeatherType.FREEZING));
     }
 
-    static class Today {
+    static class Today implements Weather {
         private String type;
+        @Override
+        public String getWeatherType(){
+            return type;
+        }
 
         Today(String type) {
             this.type = type;

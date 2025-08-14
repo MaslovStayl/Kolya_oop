@@ -25,9 +25,11 @@ public class Solution {
         boolean isAlcoholic();
     }
 
-    public static class Beer {
+    public static class Beer implements Drink {
+        public boolean isAlcoholic(){return true;}
     }
 
-    public static class Cola {
+    public static class Cola implements Drink  {
+        public boolean isAlcoholic() {return false;}
     }
 }

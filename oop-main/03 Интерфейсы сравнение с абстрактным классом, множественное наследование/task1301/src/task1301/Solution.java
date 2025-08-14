@@ -34,7 +34,10 @@ public class Solution {
         void sleepOnTheFloor();
     }
 
-    public static class BeerLover {
-
+    public static abstract class BeerLover implements Alcoholic {
+        public void askForMore(String message) {}
+        public void sayThankYou() {}
+        public void sleepOnTheFloor() {}
+        public boolean isReadyToGoHome() {return READY_TO_GO_HOME;}
     }
 }

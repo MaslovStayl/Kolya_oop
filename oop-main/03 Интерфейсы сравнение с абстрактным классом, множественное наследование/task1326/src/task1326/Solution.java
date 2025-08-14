@@ -1,7 +1,6 @@
 package task1326;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,9 +36,28 @@ Requirements:
 4. Программа должна вывести на экран все четные числа, считанные из файла, отсортированные по возрастанию.
 5. Программа должна закрывать поток чтения из файла — FileInputStream.*/
 
-public class Solution {
-    public static void main(String[] args) {
-        // напишите тут ваш код
 
+public class Solution {
+
+    public static void main(String[] args) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+             FileReader fileReader = new
+                     FileReader(reader.readLine());
+             BufferedReader secondReader = new BufferedReader(fileReader)) {
+            List<Integer> list = new ArrayList<>();
+            String line;
+            while ((line = secondReader.readLine()) != null) {
+                int x = Integer.parseInt(line);
+                if ((x % 2) == 0) {
+                    list.add(x);
+                }
+            }
+            Collections.sort(list);
+            for (int x : list) {
+                System.out.println(x);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

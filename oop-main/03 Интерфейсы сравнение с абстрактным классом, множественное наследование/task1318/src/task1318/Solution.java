@@ -25,9 +25,7 @@ public class Solution {
             FileOutputStream fileOutputStream = new FileOutputStream("c:/java/test.txt");
             fileOutputStream.write(file.getBytes());
             fileOutputStream.close();
-
             InputStream inputStream = new FileInputStream("c:/java/test.txt");
-
 
             while (inputStream.available() > 0) {
                 int data = inputStream.read();
@@ -37,6 +35,8 @@ public class Solution {
         } catch (FileNotFoundException e) {
                 System.out.println(e);
         }
-        reader.close();
+        finally {
+            reader.close();
+        }
     }
 }

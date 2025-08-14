@@ -28,5 +28,11 @@ public class Solution {
             return "Я переводчик с " + getLanguage();
         }
     }
+    public static class EnglishTranslator extends Translator {
+        public  String getLanguage(){
+            return  " англиского";
+        }
+
+    }
 
 }

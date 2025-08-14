@@ -1,9 +1,6 @@
 package task1319;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /* 
 Писатель в файл с консоли
@@ -22,7 +19,24 @@ Requirements:
 7. Метод main не должен выводить данные на экран.*/
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // напишите тут ваш код
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            try (BufferedOutputStream writter = new BufferedOutputStream(new FileOutputStream ("c:/Java/Test.txt") {})) {
+                String line;
+                while (!(line = reader.readLine()).equals("exit")) {
+                    writter.write(line.getBytes());
+                }
+            }
+            InputStream inputStream = new FileInputStream("c:/java/test.txt");
+
+            while (inputStream.available() > 0) {
+                int data = inputStream.read();
+                System.out.print((char) (data));
+            }
+            inputStream.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
     }
 }

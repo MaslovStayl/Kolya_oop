@@ -24,14 +24,16 @@ public class Solution {
     }
 
     interface DBObject {
-        DBObject initializeIdAndName(long id, String name) {
+        DBObject initializeIdAndName(long id, String name);
+    }
+
+    static class User implements DBObject {
+        public DBObject initializeIdAndName(long id, String name)
+        {
             this.id = id;
             this.name = name;
             return this;
         }
-    }
-
-    static class User implements DBObject {
         long id;
         String name;
 
@@ -40,5 +42,4 @@ public class Solution {
             return String.format("The user's name is %s, id = %d", name, id);
         }
     }
-
 }

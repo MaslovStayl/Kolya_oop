@@ -22,5 +22,11 @@ public class Solution {
     interface SimpleObject<T> {
         SimpleObject<T> getInstance();
     }
+    public static class StringObject implements  SimpleObject{
+        @Override
+        public SimpleObject<String> getInstance() {
+            return null;
+        }
+    }
 
 }

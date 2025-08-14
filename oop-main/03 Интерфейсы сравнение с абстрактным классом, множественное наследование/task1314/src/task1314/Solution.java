@@ -23,7 +23,7 @@ public class Solution {
     }
 
     public interface Animal {
-        Color getColor();
+       default Color getColor(){return null;}
     }
 
     public static abstract class Fox implements Animal {
@@ -32,10 +32,8 @@ public class Solution {
         }
     }
 
-    public static class BigFox {
-        public Color() {
-            return Color.GRAY;
-        }
+    public static class BigFox extends Fox implements Animal {
+        public Color getColor() {return Color.GRAY;}
     }
 
 }

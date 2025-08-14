@@ -28,14 +28,19 @@ public class Solution {
         Color getColor();
     }
 
-    public static class Fox implements Animal {
+    public abstract static class Fox implements Animal {
+        @Override
+        public abstract Color getColor();
         public String getName() {
             return "Fox";
         }
     }
 
-    public abstract static class BigFox {
-
+    public  static class BigFox extends Fox {
+        @Override
+        public Color getColor() {
+            return null;
+        }
     }
 
 }
