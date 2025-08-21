@@ -21,6 +21,7 @@ Requirements:
 7. В интерфейсе Bridge должен быть определен метод int getCarsCount().
 */
 
+
 public class Solution {
     public static void main(String[] args) {
         println(new WaterBridge());
@@ -28,5 +29,8 @@ public class Solution {
     }
 
     //add println method here
+    public static void println (Bridge bridge) {
+        System.out.println(bridge.getCarsCount());
+    }
 }
 

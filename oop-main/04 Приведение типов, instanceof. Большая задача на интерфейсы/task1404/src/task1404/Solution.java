@@ -21,7 +21,15 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while(true){
+            String name = br.readLine();
+            if(name == null || name.isEmpty()) break;
+            else{
+                System.out.println(new Cat(name));
+                System.out.println(CatFactory.getCatByKey(name));
+            }
+        }
     }
 
     static class CatFactory {

@@ -18,6 +18,8 @@ Requirements:
 4. Выдра (RiverOtter) НЕ является морским животным (потомком SeaCreature).
 5. Кит (Whale) и Косатка (Orca) НЕ умеют ходить (не поддерживают интерфейс CanWalk).*/
 
+import java.util.Currency;
+
 public class Solution {
     public static void main(String[] args) {
         CanSwim creature = new Orca();
@@ -29,6 +31,7 @@ public class Solution {
     }
 
     public static void test(CanSwim creature) {
+
         creature.swim();
     }
 
@@ -40,7 +43,7 @@ public class Solution {
         void swim();
     }
 
-    static abstract class SeaCreature {
+    static abstract class SeaCreature implements CanSwim {
         public void swim() {
             SeaCreature currentCreature = (SeaCreature) getCurrentCreature();
             currentCreature.displaySwim();
@@ -53,14 +56,37 @@ public class Solution {
         abstract CanSwim getCurrentCreature();
     }
 
-    static class Orca {
+    static class Orca extends SeaCreature {
+
+        @Override
+        CanSwim getCurrentCreature() {
+            return new Orca();
+        }
     }
 
-    static class Whale {
+    static class Whale extends SeaCreature {
 
+        @Override
+        CanSwim getCurrentCreature() {
+            return new Whale();
+        }
     }
 
-    static class RiverOtter {
+    static class RiverOtter implements CanWalk, CanSwim {
+        @Override
+        public void swim() {
 
+        }
+
+        @Override
+        public void walk() {
+
+        }
+        SeaCreature seaCreature = new SeaCreature() {
+            @Override
+            CanSwim getCurrentCreature() {
+                return new RiverOtter();
+            }
+        };
     }
 }

@@ -24,37 +24,34 @@ public class Solution {
     }
 
     public static void printMainInfo(Object object) {
-        //напишите тут ваш код
+        // Добавляем код здесь
+        if (object instanceof Drawable) {
+            ((Drawable) object).draw();
+        }
+        if (object instanceof Movable) {
+            ((Movable) object).move();
+        }
     }
-
     static interface Movable {
-
         void move();
     }
-
     static class Circle implements Movable {
-
         public void draw() {
-            System.out.println("Can be drawn");
+            System.out.println("can be drawn");
         }
-
         public void move() {
-            System.out.println("Can be moved");
+            System.out.println("can be moved");
         }
-
     }
-
     static interface Drawable {
         void draw();
     }
-
     static class Rectangle implements Drawable {
         public void draw() {
-            System.out.println("Can be drawn");
+            System.out.println("can be drawn");
         }
-
         public void move() {
-            System.out.println("Can be moved");
+            System.out.println("can be moved");
         }
     }
 }

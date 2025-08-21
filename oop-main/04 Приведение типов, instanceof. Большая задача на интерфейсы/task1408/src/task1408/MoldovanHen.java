@@ -3,7 +3,7 @@ package task1408;
 public class MoldovanHen extends Hen{
     @Override
     int getCountOfEggsPerMonth() {
-        return 50;
+        return 300;
     }
 
     String getDescription() {

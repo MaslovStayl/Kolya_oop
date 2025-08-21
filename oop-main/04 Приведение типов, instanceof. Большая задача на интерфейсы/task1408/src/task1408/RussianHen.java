@@ -2,11 +2,11 @@ package task1408;
 
 public class RussianHen extends Hen {
     @Override
-    int getCountOfEggsPerMonth() {
-        return 100;
+   public int getCountOfEggsPerMonth() {
+        return 1000;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return super.getDescription() + " Моя страна — " + Country.RUSSIA + ". Я несу " + getCountOfEggsPerMonth() + " яиц в месяц.";
     }
 }

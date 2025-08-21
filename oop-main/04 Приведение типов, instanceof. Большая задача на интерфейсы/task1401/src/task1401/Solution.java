@@ -14,7 +14,7 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        Object animal = new Pet();
+        Object animal = new Tiger();
         boolean isCat = animal instanceof Cat;
         boolean isTiger = animal instanceof Tiger;
         boolean isPet = animal instanceof Pet;

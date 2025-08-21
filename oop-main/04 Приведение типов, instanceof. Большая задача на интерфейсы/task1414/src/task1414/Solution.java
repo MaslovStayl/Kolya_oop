@@ -2,6 +2,8 @@ package task1414;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Scanner;
 
 /* 
 MovieFactory
@@ -34,8 +36,28 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //ввести с консоли несколько ключей (строк), пункт 7
-
+        Scanner scanner = new Scanner(System.in);
+        String key = scanner.nextLine();
+        while (key.equals("cartoon") || key.equals("thriller") || key.equals("soapOpera")) {
+            switch (key) {
+                case ("cartoon"):
+                    //MovieFactory.getMovie("cartoon");
+                    System.out.println(MovieFactory.getMovie("cartoon").getClass().getSimpleName());
+                    break;
+                case ("thriller"):
+                    MovieFactory.getMovie("thriller");
+                    System.out.println(MovieFactory.getMovie("thriller").getClass().getSimpleName());
+                    break;
+                case ("soapOpera"):
+                    MovieFactory.getMovie("soapOpera");
+                    System.out.println(MovieFactory.getMovie("soapOpera").getClass().getSimpleName());
+                    break;
+                default:
+                    System.out.println(MovieFactory.getMovie(key).getClass().getSimpleName());
+                    break;
+            }
+            key = scanner.nextLine();
+        }
         /*
 8 Создать переменную movie класса Movie и для каждой введенной строки(ключа):
 8.1 получить объект используя MovieFactory.getMovie и присвоить его переменной movie
@@ -43,6 +65,7 @@ public class Solution {
         */
 
     }
+
 
     static class MovieFactory {
 
@@ -53,18 +76,23 @@ public class Solution {
             if ("soapOpera".equals(key)) {
                 movie = new SoapOpera();
             }
-
-            //напишите тут ваш код, пункты 5,6
-
+            if ("cartoon".equals(key)) {
+                movie = new Cartoon();
+            }
+            if ("thriller".equals(key)) {
+                movie = new Thriller();
+            }
             return movie;
+        }
+
+        static abstract class Movie {
+        }
+        static class SoapOpera extends Movie {
         }
     }
 
-    static abstract class Movie {
+    static class Cartoon extends MovieFactory.Movie {
     }
-
-    static class SoapOpera extends Movie {
+    static class Thriller  extends MovieFactory.Movie {
     }
-
-    //Напишите тут ваши классы, пункт 3
 }
